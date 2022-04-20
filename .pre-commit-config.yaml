@@ -1,0 +1,26 @@
+repos:
+  - repo: https://github.com/ambv/black
+    rev: 22.3.0
+    hooks:
+      - id: black
+        language_version: python3.9
+  - repo: https://gitlab.com/pycqa/flake8
+    rev: 3.9.2
+    hooks:
+      - id: flake8
+        args: [ --max-line-length=119 ]
+  - repo: https://github.com/PyCQA/isort
+    rev: 5.10.1
+    hooks:
+      - id: isort
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.2.0
+    hooks:
+    -   id: detect-secrets
+        name: Detect secrets
+        language: python
+        exclude : poetry.lock
+  - repo: https://github.com/adamchainz/pre-commit-oxipng
+    rev: v5.0.1
+    hooks:
+    -   id: oxipng
